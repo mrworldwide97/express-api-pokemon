@@ -13,7 +13,7 @@ Assurez-vous d'avoir les éléments suivants installés sur votre système :
 1. Clonez ce dépôt sur votre machine en utilisant la commande suivante :
 
    ```bash
-   git clone https://github.com/votre-utilisateur/api-node-express.git
+   git clone https://github.com/Nyhasina23/express-api-pokemon.git
    Accédez au répertoire du projet :
    ```
 
