@@ -1,0 +1,130 @@
+{
+  "/api/abilities": {
+    "post": {
+      "tags": ["compétences"],
+      "summary": "Création d'un compétence",
+      "description": "le formulaire de creation",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nom": {
+                  "type": "string",
+                  "description": "nom",
+                  "example": "Electriques"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "description",
+                  "example": "description..."
+                },
+                "puissance": {
+                  "type": "number",
+                  "description": "puissance",
+                  "example": "10"
+                },
+                "precision": {
+                  "type": "number",
+                  "description": "precision",
+                  "example": "100"
+                },
+                "pp_max": {
+                  "type": "number",
+                  "description": "PP Max",
+                  "example": "1.4"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "identifiant du type",
+                  "example": "654ce50f48746dd9e08ec31c"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Le nouveau compétence créé"
+        }
+      }
+    }
+  },
+  "/api/abilities/:id": {
+    "put": {
+      "tags": ["compétences"],
+      "summary": "Mofidication d'un compétence",
+      "description": "le formulaire de modification",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "type": "string",
+          "description": "L'identifiant d'un compétence",
+          "example": "65461616f548bebc8e464dd3"
+        }
+      ],
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nom": {
+                  "type": "string",
+                  "description": "nom",
+                  "example": "Electriques"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "description",
+                  "example": "description..."
+                },
+                "puissance": {
+                  "type": "number",
+                  "description": "puissance",
+                  "example": "10"
+                },
+                "precision": {
+                  "type": "number",
+                  "description": "precision",
+                  "example": "100"
+                },
+                "pp_max": {
+                  "type": "number",
+                  "description": "PP Max",
+                  "example": "1.4"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "identifiant du type",
+                  "example": "654ce50f48746dd9e08ec31c"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Le compétence modifié"
+        }
+      }
+    }
+  },
+  "/api/abilities ": {
+    "get": {
+      "tags": ["compétences"],
+      "summary": "Récuperation de tous les  compétences",
+      "responses": {
+        "200": {
+          "description": "Tous les  compétences"
+        }
+      }
+    }
+  }
+}

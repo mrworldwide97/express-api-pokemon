@@ -1,0 +1,70 @@
+{
+  "/api/users/signin": {
+    "post": {
+      "tags": ["authentication"],
+      "summary": "Connexion à un compte",
+      "description": "le formulaire de connexion, il retourne un token JWT",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "description": "username de l'utilisateur",
+                  "example": "Pokemon"
+                },
+                "password": {
+                  "type": "string",
+                  "description": "Son mot de passe",
+                  "example": "Pass1234"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "un token JWT"
+        }
+      }
+    }
+  },
+  "/api/users/signup": {
+    "post": {
+      "tags": ["authentication"],
+      "summary": "Création d'un compte",
+      "description": "le formulaire de creation, il retourne un token JWT",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "description": "username de l'utilisateur",
+                  "example": "Pokemon"
+                },
+                "password": {
+                  "type": "string",
+                  "description": "Son mot de passe",
+                  "example": "Pass1234"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "un token JWT"
+        }
+      }
+    }
+  }
+}

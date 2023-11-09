@@ -1,0 +1,90 @@
+{
+  "/api/types/": {
+    "post": {
+      "tags": ["types"],
+      "summary": "Création d'un type",
+      "description": "le formulaire de création",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nom": {
+                  "type": "string",
+                  "description": "nom",
+                  "example": "Feu"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Le nouveau type créé"
+        }
+      }
+    }
+  },
+  "/api/types/:id": {
+    "put": {
+      "tags": ["types"],
+      "summary": "Modification d'un type",
+      "description": "le formulaire de modification",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "type": "string",
+          "description": "L'identifiant d'un type",
+          "example": "65461616f548bebc8e464dd3"
+        }
+      ],
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nom": {
+                  "type": "string",
+                  "description": "nom",
+                  "example": "Feu"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Le type modifié"
+        }
+      }
+    }
+  },
+  "/api/types/:id ": {
+    "get": {
+      "tags": ["types"],
+      "summary": "Récuperation d'un type",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "type": "string",
+          "description": "L'identifiant d'un type",
+          "example": "65461616f548bebc8e464dd3"
+        }
+      ],
+
+      "responses": {
+        "200": {
+          "description": "Le type depuis son identifiant"
+        }
+      }
+    }
+  }
+}

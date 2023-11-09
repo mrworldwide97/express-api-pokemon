@@ -1,0 +1,186 @@
+{
+  "/api/pokemons": {
+    "post": {
+      "tags": ["pokemons"],
+      "summary": "Création d'un Pokemon",
+      "description": "le formulaire de creation",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numero_pokedex": {
+                  "type": "string",
+                  "description": "Numero du pokedex",
+                  "example": "001"
+                },
+                "nom": {
+                  "type": "string",
+                  "description": "nom",
+                  "example": "Venusaur"
+                },
+                "taille": {
+                  "type": "number",
+                  "description": "taille",
+                  "example": "0.7"
+                },
+                "poids": {
+                  "type": "number",
+                  "description": "poids",
+                  "example": "6.9"
+                },
+                "image": {
+                  "type": "string",
+                  "description": "photo d'un pokemon",
+                  "example": "pokemon.jpg"
+                },
+                "types": {
+                  "type": "string",
+                  "description": "identifiant du type",
+                  "example": "654ce50f48746dd9e08ec31c"
+                },
+                "competences": {
+                  "type": "string",
+                  "description": "identifiant de competence",
+                  "example": "654ce50f48746dd9e08ec31c"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Le nouveau pokemon créé"
+        }
+      }
+    }
+  },
+  "/api/pokemons/:id": {
+    "put": {
+      "tags": ["pokemons"],
+      "summary": "Mise à jour d'un Pokemon",
+      "description": "le formulaire de mise à jour",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "string"
+          },
+          "description": "L'identifiant d'un pokemon",
+          "example": "65461616f548bebc8e464dd3"
+        }
+      ],
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numero_pokedex": {
+                  "type": "string",
+                  "description": "Numero du pokedex",
+                  "example": "001"
+                },
+                "nom": {
+                  "type": "string",
+                  "description": "nom",
+                  "example": "Venusaur"
+                },
+                "taille": {
+                  "type": "number",
+                  "description": "taille",
+                  "example": "0.7"
+                },
+                "poids": {
+                  "type": "number",
+                  "description": "poids",
+                  "example": "6.9"
+                },
+                "image": {
+                  "type": "string",
+                  "description": "photo d'un pokemon",
+                  "example": "pokemon.jpg"
+                },
+                "types": {
+                  "type": "string",
+                  "description": "identifiant du type",
+                  "example": "654ce50f48746dd9e08ec31c"
+                },
+                "competences": {
+                  "type": "string",
+                  "description": "identifiant de competence",
+                  "example": "654ce50f48746dd9e08ec31c"
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Le pokemon aves ses modifications"
+        }
+      }
+    }
+  },
+  "/api/pokemons/:id ": {
+    "delete": {
+      "tags": ["pokemons"],
+      "summary": "Suppression d'un Pokemon",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "string"
+          },
+          "description": "L'identifiant d'un pokemon",
+          "example": "65461616f548bebc8e464dd3"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Le pokemon supprimé"
+        }
+      }
+    }
+  },
+  "/api/pokemons/:id  ": {
+    "get": {
+      "tags": ["pokemons"],
+      "summary": "Récuperation d'un Pokemon",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "string"
+          },
+          "description": "L'identifiant d'un pokemon",
+          "example": "65461616f548bebc8e464dd3"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Le pokemon depuis son identifiant"
+        }
+      }
+    }
+  },
+  "/api/pokemons  ": {
+    "get": {
+      "tags": ["pokemons"],
+      "summary": "Récuperation de tous les  Pokemons",
+      "responses": {
+        "200": {
+          "description": "Tous les pokemons"
+        }
+      }
+    }
+  }
+}
